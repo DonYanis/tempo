@@ -50,15 +50,15 @@ TRAINING = [
 TRAINING_PROGRAM = [
     'Age(x,CHILD) ==> Program(x,Active_Start)',
     'Age(x,OLD) ==> Program(x,SilverSneakers)',
-    'Training(x,low) ==>Program(x,Circuit)',
-    'Training(x,low) ==>Program(x,CrossFit)',
+    'Training(x,LOW) ==>Program(x,Circuit)',
+    'Training(x,LOW) ==>Program(x,CrossFit)',
 
     'Training(x,AVERAGE) & Goal(x,LOSS)==>Program(x,HIIT)',
     'Training(x,AVERAGE) & Goal(x,GAIN)==>Program(x,StrongLifts)',
     'Training(x,AVERAGE) & Goal(x,GAIN)==>Program(x,PPL)',
-    'Training(x,AVERAGE) & Goal(x,GENRAL)==>Program(x,CrossFit)',
-    'Gender(x,FEMALE) & Training(x,AVERAGE) & Goal(x,GENRAL)==>Program(x,CrossFit)',
-    'Training(x,AVERAGE) & Goal(x,GENRAL)==>Program(x,Circuit)',
+    'Training(x,AVERAGE) & Goal(x,GENERAL)==>Program(x,CrossFit)',
+    'Gender(x,FEMALE) & Training(x,AVERAGE) & Goal(x,GENERAL)==>Program(x,CrossFit)',
+    'Training(x,AVERAGE) & Goal(x,GENERAL)==>Program(x,Circuit)',
     'Training(x,AVERAGE) & Goal(x,MUSCLE)==>Program(x,PPL)',
     'Training(x,AVERAGE) & Goal(x,MUSCLE)==>Program(x,GVT)',
     'Training(x,AVERAGE) & Goal(x,MUSCLE)==>Program(x,FourDay_SPLIT)',
@@ -73,25 +73,25 @@ TRAINING_PROGRAM = [
 
 #food to eat
 EAT_FOOD = [
-    'Goal(x,LOSS)==>EAT(x,Lean_protein)',
-    'Goal(x,LOSS)==>EAT(x,Whole_grains)',
-    'Goal(x,LOSS)==>EAT(x,Fruits)',
+    'Goal(x,LOSS)==>Eat(x,Lean_protein)',
+    'Goal(x,LOSS)==>Eat(x,Whole_grains)',
+    'Goal(x,LOSS)==>Eat(x,Fruits)',
 
-    'Goal(x,GAIN)==>EAT(x,Calorie_dense_foods)',
-    'Goal(x,GAIN)==>EAT(x,Lean_protein)',
-    'Goal(x,GAIN)==>EAT(x,Healthy_fats)',
+    'Goal(x,GAIN)==>Eat(x,Calorie_dense_foods)',
+    'Goal(x,GAIN)==>Eat(x,Lean_protein)',
+    'Goal(x,GAIN)==>Eat(x,Healthy_fats)',
 
-    'Goal(x,GENRAL)==>EAT(x,Lean_protein)',
-    'Goal(x,GENRAL)==>EAT(x,Whole_grains)',
-    'Goal(x,GENRAL)==>EAT(x,Fruits)',
+    'Goal(x,GENERAL)==>Eat(x,Lean_protein)',
+    'Goal(x,GENERAL)==>Eat(x,Whole_grains)',
+    'Goal(x,GENERAL)==>Eat(x,Fruits)',
 
-    'Goal(x,MUSCLE)==>EAT(x,Protein)',
-    'Goal(x,MUSCLE)==>EAT(x,Complex_carbohydrates)',
-    'Goal(x,MUSCLE)==>EAT(x,Healthy_fats)',
+    'Goal(x,MUSCLE)==>Eat(x,Protein)',
+    'Goal(x,MUSCLE)==>Eat(x,Complex_carbohydrates)',
+    'Goal(x,MUSCLE)==>Eat(x,Healthy_fats)',
 
-    'Goal(x,ENDURANCE)==>EAT(x,Complex_carbohydrates )',
-    'Goal(x,ENDURANCE)==>EAT(x,Protein)',
-    'Goal(x,ENDURANCE)==>EAT(x,Healthy_fats)'
+    'Goal(x,ENDURANCE)==>Eat(x,Complex_carbohydrates )',
+    'Goal(x,ENDURANCE)==>Eat(x,Protein)',
+    'Goal(x,ENDURANCE)==>Eat(x,Healthy_fats)'
 ]
 
 #food to avoid

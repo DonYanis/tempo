@@ -45,9 +45,11 @@ def init_user(data, fc):
 def backward_chaining(predicate, name, fc) :
 
     result = list(fol_bc_ask(fc,expr(f"{predicate}({name},x)")))
-
     if len(result) > 0 : 
-        return result[0].get(x)
+        data = []
+        for dic in result : 
+            data.append(dic.get(x))
+        return data
     return '-'
 
 
