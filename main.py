@@ -26,7 +26,27 @@ fc = init_FAI_KB()
 
 # 2- Working Memory
 memory = init_user(data,fc)
-print(memory)
+print("Memory : \n",memory)
 
-# 3- inference
-inference_engine(data['name'], fc)
+# 3- genearating the agenda
+agenda = generate_agenda(data['name'])
+print("Agenda : \n",agenda)
+
+# 4- inference
+result = inference_engine(fc, agenda)
+
+# print results
+print(result)
+
+output = {
+    'data' : result,
+    'macros': macros,
+    'extra' : {
+        'workingmemory' : memory,
+        'agenda' : agenda
+    }
+}
+
+# Dump the object to a JSON file
+with open("output.json", "w") as f:
+    f.write(output.__str__().replace("'", "\""))

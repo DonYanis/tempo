@@ -1,0 +1,22 @@
+{
+    "data": {
+        "health": ["GOOD"], 
+        "food": ["INCREASE"], 
+        "training": ["AVERAGE"], 
+        "program": ["PPL", "GVT", "FourDay_SPLIT"], 
+        "eat": ["Protein", "Complex_carbohydrates", "Healthy_fats"], 
+        "advice": ["Lift heavy, eat protein", "Prioritize protein and fiber"], 
+        "avoid": ["Processed_snacks", "Soda", "Fried_food"]
+    }, 
+    "macros": {
+        "Calories": 2753.4696000000004, 
+        "Protein": 147.0, 
+        "Fat": 91.78232000000001, 
+        "Carbohydrates": 344.18370000000004, 
+        "Fiber": 35.0
+    }, 
+    "extra": {
+        "workingmemory": ["Gender(JOHN,MALE)", "Age(JOHN,YOUNGADULT)", "Activity(JOHN,MEDIUM)", "Weight(JOHN,OVER)", "Goal(JOHN,MUSCLE)", "Schedule(JOHN,FLEXIBLE)", "BMI(JOHN,GOOD)"], 
+        "agenda": [["Health", "Health(JOHN,x)"], ["Food", "Food(JOHN,x)"], ["Training", "Training(JOHN,x)"], ["Program", "Program(JOHN,x)"], ["Eat", "Eat(JOHN,x)"], ["Advice", "Advice(JOHN,x)"], ["Avoid", "Avoid(x)"]]
+    }
+}

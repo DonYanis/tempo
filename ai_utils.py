@@ -1,7 +1,7 @@
 from knowledge_base import *
 from aima.logic import *
 from aima.utils import *
-
+from advice import *
 
 def init_FAI_KB():
 
@@ -50,44 +50,45 @@ def init_user(data, fc):
     return memo
 
 
-def backward_chaining(predicate, name, fc) :
+def generate_agenda(name):
+
+    agenda = []
+    for predicate in ['Health','Food','Training','Program','Eat','Advice'] :
+        agenda.append([predicate,f"{predicate}({name},x)"])
+
+    agenda.append(['Avoid','Avoid(x)'])
+
+    return agenda
 
 
-    result = list(fol_bc_ask(fc,expr(f"{predicate}({name},x)")))
+def backward_chaining(fc, exp) :
+
+    result = list(fol_bc_ask(fc,expr(exp)))
     if len(result) > 0 : 
         data = []
         for dic in result : 
-            data.append(dic.get(x))
+            data.append(str(dic.get(x)))
         return data
-    return '-'
+    return None
 
 
-def inference_engine(name, fc) : 
+def inference_engine(fc, agenda) : 
 
-    #health
-    health_state = backward_chaining('Health', name, fc)
-    print('health : ',health_state)
+    data = {}
+    for couple in agenda :
+        result = backward_chaining(fc, couple[1])
+        if couple[0] == 'Advice' :
+            data[couple[0].lower()] = replace_advice(result)
+        else:
+            data[couple[0].lower()] = result
+    
+    return data
 
-    #food
-    food_consumption = backward_chaining('Food', name, fc)
-    print('food : ',food_consumption)
 
-    #trainig
-    trainig = backward_chaining('Training', name, fc)
-    print('train : ',trainig)
-
-    #program
-    program = backward_chaining('Program', name, fc)
-    print('program : ',program)
-
-    #eat
-    food_to_eat = backward_chaining('Eat', name, fc)
-    print('eat : ',food_to_eat)
-
-    #avoid
-    food_to_avoid = list(fol_bc_ask(fc,expr(f"Avoid(x)")))
-    print('avoid : ',food_to_avoid)
-
-    #advice
-    advice = backward_chaining('Advice', name, fc)
-    print('advice : ',advice)
+def replace_advice(advice):
+    
+    temp = []
+    for adv in advice:
+        temp.append(Aj[str(adv)])
+    
+    return temp

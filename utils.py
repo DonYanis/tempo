@@ -22,7 +22,6 @@ def get_weight_category(weight, height):
     
 def get_nutrition_requirements(weight, height, gender, activity_level, training_goal, age):
 
-
     if age == "CHILD":
         age = 8
     elif age == "TEEN":
