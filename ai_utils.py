@@ -33,16 +33,25 @@ def init_FAI_KB():
 
 def init_user(data, fc):
 
-    fc.tell(expr(f"Gender({data['name']},{data['gender']})"))
-    fc.tell(expr(f"Age({data['name']},{data['age']})"))
-    fc.tell(expr(f"Activity({data['name']},{data['activity']})"))
-    fc.tell(expr(f"Weight({data['name']},{data['weight_cat']})"))
-    fc.tell(expr(f"Goal({data['name']},{data['goal']})"))
-    fc.tell(expr(f"Schedule({data['name']},{data['schedule']})"))
-    fc.tell(expr(f"BMI({data['name']},{data['bmi']})"))
+    memo  = [
+        f"Gender({data['name']},{data['gender']})",
+        f"Age({data['name']},{data['age']})",
+        f"Activity({data['name']},{data['activity']})",
+        f"Weight({data['name']},{data['weight_cat']})",
+        f"Goal({data['name']},{data['goal']})",
+        f"Schedule({data['name']},{data['schedule']})",
+        f"BMI({data['name']},{data['bmi']})",
+    ]
+
+
+    for exp in memo : 
+        fc.tell(expr(exp))
+
+    return memo
 
 
 def backward_chaining(predicate, name, fc) :
+
 
     result = list(fol_bc_ask(fc,expr(f"{predicate}({name},x)")))
     if len(result) > 0 : 
@@ -53,7 +62,7 @@ def backward_chaining(predicate, name, fc) :
     return '-'
 
 
-def inference_logic(name, fc) : 
+def inference_engine(name, fc) : 
 
     #health
     health_state = backward_chaining('Health', name, fc)

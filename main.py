@@ -23,7 +23,10 @@ macros = get_nutrition_requirements(data['weight'], data['height'],data['gender'
 
 # 1- knowledge base
 fc = init_FAI_KB()
-init_user(data,fc)
 
-# 2- inference
-inference_logic(data['name'], fc)
+# 2- Working Memory
+memory = init_user(data,fc)
+print(memory)
+
+# 3- inference
+inference_engine(data['name'], fc)
