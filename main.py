@@ -35,17 +35,23 @@ print("Agenda : \n",agenda)
 # 4- inference
 result = inference_engine(fc, agenda)
 
-# print results
-print(result)
 
 output = {
-    'data' : result,
+    'health' : result['health'][0],
+    'food' : result['food'][0],
+    'training' : result['training'][0],
+    'program' : result['program'],
+    'eat' : result['eat'],
+    'avoid' : result['avoid'],
+    'advice' : result['advice'],
     'macros': macros,
     'extra' : {
         'workingmemory' : memory,
         'agenda' : agenda
     }
 }
+
+print(output)
 
 # Dump the object to a JSON file
 with open("output.json", "w") as f:
