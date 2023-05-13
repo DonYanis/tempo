@@ -1,0 +1,18 @@
+Aj = {
+    'A1' : 'Eat fewer calories, move more',
+    'A2' : 'Eat more, lift weights',
+    'A3' : 'Consistency is key, progress gradually',
+    'A4' : 'Lift heavy, eat protein',
+    'A5' : 'Train smart, increase gradually',
+    'A6' : 'Drink plenty of water.',
+    'A7' : 'Get enough sleep',
+    'A8' : 'Prioritize protein and fiber',
+    'A9' : 'Find activities you enjoy',
+    'A10' : 'Eat more protein and carbs',
+    'A11' : 'Stay hydrated and fueled',
+    'A12' : 'Focus on form and breathing',
+    'A13' : 'Dont neglect cardio',
+    'A14' : 'Eat eat eat!',
+    'A15' : 'Focus on protein more than calories',
+    'A16' : 'Its not too late to lose some weight!',
+}
